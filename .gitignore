@@ -14,3 +14,6 @@ dist/
 /build
 /media
 /staticfiles
+
+# info
+/data
