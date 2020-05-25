@@ -4,10 +4,26 @@ import './index.css'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
+import { createStore, compose, applyMiddleware, combineReducers } from 'redux'
+import { Provider } from 'react-redux'
+import thunk from 'redux-thunk'
+import reducer from './store/reducer'
+import { fetchProducts } from './store/actions'
+
+const composeEnhances = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
+const rootReducer = combineReducers({
+  data: reducer
+})
+
+const store = createStore(rootReducer, composeEnhances(applyMiddleware(thunk)))
+
+store.dispatch(fetchProducts())
+
 ReactDOM.render(
-  <React.StrictMode>
+  <Provider store={store}>
     <App />
-  </React.StrictMode>,
+  </Provider>,
   document.getElementById('root')
 )
 
