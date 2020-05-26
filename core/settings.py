@@ -89,8 +89,8 @@ if os.getenv('GAE_APPLICATION', None):
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': '/cloudsql/spices-278410:europe-west3:spices-instance',
-            'NAME': 'spices-instance',
-            'USER': 'spices-instance',
+            'NAME': 'spices',
+            'USER': 'spices',
             'PASSWORD': os.environ['PASSWORD'],
         }
     }
@@ -108,18 +108,23 @@ elif os.getenv('DEBUG_DATABASE', None) == 'cloud_sql_proxy':
     #     $ cloud_sql_proxy -instances=[INSTANCE_CONNECTION_NAME]=tcp:3306
     #
     # See https://cloud.google.com/sql/docs/mysql-connect-proxy
+    with open('app.yaml') as f:
+        datafile = f.readlines()
+        for line in datafile:
+            if 'PASSWORD' in line:
+                x = line[15:-2]
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': '127.0.0.1',
             'PORT': '3306',
-            'NAME': 'spices-instance',
-            'USER': 'spices-instance',
-            'PASSWORD': os.environ['PASSWORD'],
+            'NAME': 'spices',
+            'USER': 'spices',
+            'PASSWORD': x,
         }
     }
 else:
-    raise Exception('Improperly configured database setup. For development use `$ export(Linux)/set(Windows) DEBUG_DATABASE=sqlite`')
+    raise Exception('Improperly configured database setup. For development use `$ export(Linux)/set(Windows) DEBUG_DATABASE=sqlite, or ...=cloud_sql_proxy if you want to locally connect to cloud sql database`')
 # [END db_setup]
 
 
@@ -162,7 +167,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
