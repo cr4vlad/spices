@@ -46,3 +46,34 @@
     3. Create some Product instances
 
 10. Go to landing to check if it works
+
+
+# Deploy
+
+## Frontend
+
+    $ npm run build
+    
+## Backend
+
+## Collect static files
+
+    $ python manage.py collectstatic (in virtual env)
+
+## GCP
+
+    $ gcloud app deploy
+
+## Describe instance (get connection name for sql proxy)
+
+    $ gcloud sql instances describe spices-instance
+
+## Start SQL Proxy
+
+    $ cloud_sql_proxy -instances="spices-278410:europe-west3:spices-instance"=tcp:3306
+
+## Migrate to Cloud SQL
+With working SQL Proxy
+
+    $ SET DEBUG_DATABASE=cloud_sql_proxy
+    $ python manage.py migrate (in virtual env)

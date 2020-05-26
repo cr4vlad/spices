@@ -20,7 +20,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '7#*@+*8a+i!w4u2nc42m@8j8m$=ncbtvo7jk*_t2+^x7y%h!hv'
+if os.getenv('GAE_APPLICATION', None):
+    SECRET_KEY = os.environ['SECRET_KEY']
+else:
+    SECRET_KEY = '7#*@+*8a+i!w4u2nc42m@8j8m$=ncbtvo7jk*_t2+^x7y%h!hv'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -44,6 +47,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -84,10 +88,10 @@ if os.getenv('GAE_APPLICATION', None):
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'HOST': '/cloudsql/ziteno-257311:europe-west3:ziteno-instance',
-            'NAME': 'ziteno',
-            'USER': 'ziteno',
-            'PASSWORD': 'vymdyc-nIqcix-raktu5',
+            'HOST': '/cloudsql/spices-278410:europe-west3:spices-instance',
+            'NAME': 'spices-instance',
+            'USER': 'spices-instance',
+            'PASSWORD': os.environ['PASSWORD'],
         }
     }
 elif os.getenv('DEBUG_DATABASE', None) == 'sqlite':
@@ -109,9 +113,9 @@ elif os.getenv('DEBUG_DATABASE', None) == 'cloud_sql_proxy':
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'HOST': '127.0.0.1',
             'PORT': '3306',
-            'NAME': 'ziteno',
-            'USER': 'ziteno',
-            'PASSWORD': 'vymdyc-nIqcix-raktu5',
+            'NAME': 'spices-instance',
+            'USER': 'spices-instance',
+            'PASSWORD': os.environ['PASSWORD'],
         }
     }
 else:

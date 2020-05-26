@@ -17,3 +17,7 @@ dist/
 
 # info
 /data
+
+# GCP
+cloud_sql_proxy.exe
+app.yaml
