@@ -70,7 +70,7 @@
 
 ## Start SQL Proxy
 
-    $ cloud_sql_proxy -instances="spices-278410:europe-west3:spices-instance"=tcp:3306
+    $ cloud_sql_proxy.exe -instances="spices-278410:europe-west3:spices-instance"=tcp:3306
 
 ## Migrate to Cloud SQL
 With working SQL Proxy

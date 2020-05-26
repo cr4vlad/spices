@@ -11,12 +11,13 @@ node_modules/
 dist/
 
 # production
-/build
-/media
-/staticfiles
+build/
+media/
+static/
 
-# info
+# other
 /data
+/.vscode
 
 # GCP
 cloud_sql_proxy.exe

@@ -28,7 +28,7 @@ else:
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'spices-278410.ey.r.appspot.com', 'https://spices-278410.ey.r.appspot.com', 'http://spices-278410.ey.r.appspot.com', 'https://www.spices-278410.ey.r.appspot.com', 'http://www.spices-278410.ey.r.appspot.com']
 
 
 # Application definition
@@ -119,7 +119,7 @@ elif os.getenv('DEBUG_DATABASE', None) == 'cloud_sql_proxy':
         }
     }
 else:
-    raise Exception('Improperly configured database setup. For development use `$ export DEBUG_DATABASE=sqlite`')
+    raise Exception('Improperly configured database setup. For development use `$ export(Linux)/set(Windows) DEBUG_DATABASE=sqlite`')
 # [END db_setup]
 
 
@@ -162,7 +162,7 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'build/static')]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'frontend/build/static')]
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -175,4 +175,8 @@ CORS_ORIGIN_ALLOW_ALL = False
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://127.0.0.1:3000',
+    'https://spices-278410.ey.r.appspot.com',
+    'http://spices-278410.ey.r.appspot.com',
+    'https://www.spices-278410.ey.r.appspot.com',
+    'http://www.spices-278410.ey.r.appspot.com'
 ]

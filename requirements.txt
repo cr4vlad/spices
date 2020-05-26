@@ -2,3 +2,9 @@ Django==3.0.5
 djangorestframework==3.11.0
 django-cors-headers==3.2.1
 whitenoise==5.1.0
+
+# PostgreSQL database adapter
+psycopg2-binary==2.8.3
+
+# GCP
+django-storages[google]

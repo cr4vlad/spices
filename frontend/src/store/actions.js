@@ -4,21 +4,15 @@ import * as actionTypes from './actionTypes'
 axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
 axios.defaults.xsrfCookieName = 'csrftoken'
 
-// const URL = 'https://get-flowers.herokuapp.com/api'
-const URL = 'http://localhost:8000/api'
+// const URL = 'https://suneli.com.ua/api'
+const URL = 'https://spices-278410.ey.r.appspot.com/api'
+// const URL = 'http://localhost:8000/api'
 
 export const updateProducts = (categories, products) => {
   return {
     type: actionTypes.GET_PRODUCTS,
     categories: categories,
     products: products
-  }
-}
-
-export const updateDeliveryInfo = deliveryInfo => {
-  return {
-    type: actionTypes.SET_DELIVERY_INFO,
-    deliveryInfo: deliveryInfo
   }
 }
 
@@ -54,24 +48,6 @@ export const fetchProducts = () => {
       })
     }).catch(error => {
       console.log('fetchProducts error while getting categories, status', error.response)
-    })
-  }
-}
-
-export const addOrder = order => {
-  return dispatch => {
-    axios.post(`${URL}/orders/`, order).then(res => {
-      console.log('Added order:', order)
-      console.log('Result:', res)
-      const deliveryInfo = {}
-      for (var i in order) {
-        if (i !== 'product') {
-          deliveryInfo[i] = order[i]
-        }
-      }
-      dispatch(updateDeliveryInfo(deliveryInfo))
-    }).catch(error => {
-      console.log('addOrder error, status', error.response)
     })
   }
 }
