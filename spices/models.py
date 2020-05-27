@@ -5,8 +5,8 @@ import uuid
 class Category(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     title = models.CharField(max_length=255)
-    keywords = models.CharField(max_length=255, default='')
-    meta_description = models.CharField(max_length=255, default='')
+    keywords = models.CharField(max_length=255, blank=True, default='')
+    meta_description = models.CharField(max_length=255, blank=True, default='')
 
     def __str__(self):
         return self.id + " - " + self.title
@@ -19,14 +19,14 @@ class Product(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.CharField(max_length=4095, default='')
-    keywords = models.CharField(max_length=255, default='')
-    meta_description = models.CharField(max_length=255, default='')
+    description = models.CharField(max_length=4095, blank=True, default='')
+    keywords = models.CharField(max_length=255, blank=True, default='')
+    meta_description = models.CharField(max_length=255, blank=True, default='')
     logo = models.FileField(upload_to='logos')
     price = models.DecimalField(max_digits=7, decimal_places=0)
-    price20 = models.DecimalField(max_digits=7, decimal_places=0, null=True)
-    price50 = models.DecimalField(max_digits=7, decimal_places=0, null=True)
-    price100 = models.DecimalField(max_digits=7, decimal_places=0, null=True)
+    price20 = models.DecimalField(max_digits=7, decimal_places=0, blank=True, null=True)
+    price50 = models.DecimalField(max_digits=7, decimal_places=0, blank=True, null=True)
+    price100 = models.DecimalField(max_digits=7, decimal_places=0, blank=True, null=True)
 
     def __str__(self):
         return self.title + " - UAH " + str(self.price)
