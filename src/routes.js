@@ -11,8 +11,8 @@ function BaseRouter () {
     <Switch>
       <Route exact path='/' component={Landing} />
       <Route exact path='/price' component={Price} />
-      <Route exact path='/category/:categoryId' component={Category} />
-      <Route exact path='/product/:productId' component={Product} />
+      <Route exact path='/:categoryId' component={Category} />
+      <Route exact path='/:categoryId/:productId' component={Product} />
       <Route>404 Page not found</Route>
     </Switch>
   )

@@ -4,26 +4,43 @@ import { Helmet } from 'react-helmet'
 import ProductPage from '../components/ProductPage'
 
 function Product (props) {
-  const productId = +props.match.params.productId
+  const product = props.product
 
-  //props.products
+  if (product) {
+    return (
+      <>
+        <Helmet>
+          <title>{`${product.title} | Suneli`}</title>
+          { product.meta_description && (<meta name='description' content={product.meta_description} />)}
+          { product.keywords && (<meta name='keywords' content={product.keywords} />)}
+        </Helmet>
+
+        <ProductPage product={product} />
+      </>
+    )
+  }
 
   return (
     <>
-      <Helmet>
-        <title>{'title | Грузинские приправы'}</title>
-        <meta name='description' content='meta_description' />
-        <meta name='keywords' content='keywords' />
-      </Helmet>
+      <Helmet title='Загрузка товара... | Suneli' />
 
-      <ProductPage />
+      <p className='loading'>Загрузка товара...</p>
     </>
   )
 }
 
 const mapStateToProps = (state, ownProps) => {
-  return {
-    product: state.data.products[ownProps.match.params.categoryId][ownProps.match.params.productId]
+  try {
+    return {
+      product: state.data.products[ownProps.match.params.categoryId].filter(product => {
+        return product.id === ownProps.match.params.productId
+      })[0]
+    }
+  }
+  catch {
+    return {
+      product: {}
+    }
   }
 }
 

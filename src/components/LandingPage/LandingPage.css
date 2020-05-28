@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background: center / cover no-repeat url(../../assets/tulips.jpg);
+  background: center / cover no-repeat url(../../assets/specii-iz-gruzii.jpg);
   height: 625px;
 }
 
@@ -27,6 +27,9 @@ article.after-hero {
   display: block;
   position: relative;
   top: 625px;
+  max-width: 1180px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 @media screen and (max-width: 400px) {

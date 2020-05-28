@@ -21,7 +21,7 @@ export default function LandingCategory (props) {
 
   return (
     <>
-      <Link to={`/category/${category.id}`}>
+      <Link to={`/${category.id}`}>
         <h2 className='landing'>{category.title}</h2>
       </Link>
 
@@ -31,7 +31,7 @@ export default function LandingCategory (props) {
         ))}
       </div>
 
-      <Link to={`/category/${category.id}`}>
+      <Link to={`/${category.id}`}>
         <p className='category-link'>
           {category.title}
         </p>

@@ -37,6 +37,9 @@ article.no-hero {
   display: block;
   position: relative;
   top: 100px;
+  max-width: 1180px;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 /* Montserrat fonts */

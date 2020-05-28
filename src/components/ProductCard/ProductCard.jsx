@@ -23,7 +23,7 @@ export default function ProductCard (props) {
         { product.price100 ? (<p> От {product.price100} грн/кг</p>) : (
           <p> {product.price} грн/кг</p>
         )}
-        <Link to={`/product/${product.id}`} className='order'>Подробнее</Link>
+        <Link to={`/${product.category}/${product.id}`} className='order'>Подробнее</Link>
       </div>
     </div>
   )

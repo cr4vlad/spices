@@ -33,7 +33,7 @@ export default function Navbar (props) {
             <div className='mobile-menu'>
               {props.categories.map(category => (
                 <div key={category.id} className='category'>
-                  <Link to={`/category/${category.id}`} className='link'>
+                  <Link to={`/${category.id}`} className='link'>
                     {category.title}
                   </Link>
                 </div>

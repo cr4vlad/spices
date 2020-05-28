@@ -10,7 +10,7 @@ function Category (props) {
     return (
       <>
         <Helmet>
-          <title>{`${title} | Get Flowers`}</title>
+          <title>{`${title} | Suneli`}</title>
           <meta name='description' content={title} />
         </Helmet>
 
@@ -23,7 +23,7 @@ function Category (props) {
   console.log('props.products:', props.products)
   return (
     <>
-      <Helmet title='Loading category... | Get Flowers' />
+      <Helmet title='Loading category... | Suneli' />
 
       <p className='loading'>Loading category...</p>
     </>

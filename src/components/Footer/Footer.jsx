@@ -16,10 +16,13 @@ export default function Footer (props) {
               Главная
             </Link>
             {props.categories && props.categories.map(category => (
-              <Link key={category.id} to={`/category/${category.id}`} className='link'>
+              <Link key={category.id} to={`/${category.id}`} className='link'>
                 {category.title}
               </Link>
             ))}
+            <Link to='/price' className='link'>
+              Цены
+            </Link>
           </>
         </div>
 
@@ -30,8 +33,8 @@ export default function Footer (props) {
             </div>
             <hr />
             <div className='title'>
-              <p>Дарить цветы - это красиво, а дарить цветы, которые нравятся всем - это гарантировано поднять настроение получателю! Поэтому решив подарить букет красивых цветов - закажите их у нас!</p>
-              <p>Мы доставляем цветы по всей Украине, а в Киеве находится наш крупный цветочный магазин. Наша курьерская служба доставки цветов в Киеве GetFlowers с удовольствием и в срок выполнит адресную доставку цветов в нужный район города всего за 2 часа!</p>
+              <p>У нас Вы можете приобрести грузинские пряности, сухие смеси специй для разнообразных соусов и блюд. Мы отвечаем за безупречное качество и свежесть наших товаров.</p>
+              <p>Доставка товаров осуществляется по всей Украине посредством популярных грузоперевозчиков.</p>
             </div>
           </div>
         )}
@@ -42,14 +45,14 @@ export default function Footer (props) {
           </div>
           <hr />
           <>
-            <p className='line'>Электронная почта: <a href='mailto:2getflowers@gmail.com' className='email'>2getflowers@gmail.com</a></p>
-            <p className='line'>Телефон: +380667778899</p>
+            <p className='line'>Электронная почта: <a href='mailto:saneleblebi@gmail.com' className='email'>saneleblebi@gmail.com</a></p>
+            <p className='line'>Телефон: +380982206029</p>
           </>
         </div>
       </div>
 
       <Link to='/' className='copyright'>
-        © Copyright GetFlowers 2020
+        © Copyright Suneli 2020
       </Link>
     </footer>
   )
