@@ -9,12 +9,6 @@
   height: 625px;
 }
 
-article {
-  display: block;
-  position: relative;
-  top: 625px;
-}
-
 h2.category {
   display: inline-block;
   width: 100%;

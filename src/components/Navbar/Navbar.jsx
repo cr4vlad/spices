@@ -38,6 +38,12 @@ export default function Navbar (props) {
                   </Link>
                 </div>
               ))}
+
+              <div className='category'>
+                <Link to='/price' className='link'>
+                  Цены
+                </Link>
+              </div>
             </div>
           </div>
         </div>

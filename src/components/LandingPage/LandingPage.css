@@ -23,7 +23,7 @@
   letter-spacing: 1px;
 }
 
-article {
+article.after-hero {
   display: block;
   position: relative;
   top: 625px;

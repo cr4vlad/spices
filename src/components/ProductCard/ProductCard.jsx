@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 import './ProductCard.css'
 
 export default function ProductCard (props) {
@@ -19,8 +20,10 @@ export default function ProductCard (props) {
       <h3 className='card-title'>{product.title}</h3>
 
       <div className='price-line'>
-        <p> {product.price} грн</p>
-        <button className='order'>Подробнее</button>
+        { product.price100 ? (<p> От {product.price100} грн/кг</p>) : (
+          <p> {product.price} грн/кг</p>
+        )}
+        <Link to={`/product/${product.id}`} className='order'>Подробнее</Link>
       </div>
     </div>
   )

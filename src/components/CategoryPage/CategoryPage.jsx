@@ -20,7 +20,7 @@ export default function CategoryPage (props) {
     <>
       
 
-      <article>
+      <article className='no-hero'>
         <h2 className='category'>{title}</h2>
 
         <div className='grid-container--category'>
