@@ -31,3 +31,4 @@ dist/
 cloud_sql_proxy.exe
 data/
 .vscode/
+media/
