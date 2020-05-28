@@ -6,7 +6,7 @@ export default function Price (props) {
   return (
     <>
       <Helmet>
-        <title>{'Цены | Suneli'}</title>
+        <title>Цены | Suneli</title>
         <meta name='description' content='Цены грузинских приправ' />
       </Helmet>
 

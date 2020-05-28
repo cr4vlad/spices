@@ -13,12 +13,11 @@ export default function CategoryPage (props) {
     )
   }
 
-  //const heroImage = require(`../../assets/${products[0].category}.jpg`)
-  //<div className='hero-image' style={{ background: "center / cover no-repeat url('" + heroImage + "')" }} />
+  // const heroImage = require(`../../assets/${products[0].category}.jpg`)
+  // <div className='hero-image' style={{ background: "center / cover no-repeat url('" + heroImage + "')" }} />
 
   return (
     <>
-      
 
       <article className='no-hero'>
         <h2 className='category'>{title}</h2>

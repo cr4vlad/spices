@@ -5,8 +5,8 @@ axios.defaults.xsrfHeaderName = 'X-CSRFTOKEN'
 axios.defaults.xsrfCookieName = 'csrftoken'
 
 // const URL = 'https://suneli.com.ua/api'
-// const URL = 'https://spices-278410.ey.r.appspot.com/api'
-const URL = 'http://localhost:8000/api'
+const URL = 'https://spices-278410.ey.r.appspot.com/api'
+// const URL = 'http://localhost:8000/api'
 
 export const updateProducts = (categories, products) => {
   return {

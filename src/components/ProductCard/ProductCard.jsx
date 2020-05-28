@@ -20,7 +20,7 @@ export default function ProductCard (props) {
       <h3 className='card-title'>{product.title}</h3>
 
       <div className='price-line'>
-        { product.price100 ? (<p> От {product.price100} грн/кг</p>) : (
+        {product.price100 ? (<p> От {product.price100} грн/кг</p>) : (
           <p> {product.price} грн/кг</p>
         )}
         <Link to={`/${product.category}/${product.id}`} className='order'>Подробнее</Link>

@@ -25,7 +25,7 @@ export default function Navbar (props) {
         <div className='nav--desktop'>
           <h1>
             <Link to='/'>
-              Грузинские приправы
+              Suneli
             </Link>
           </h1>
 

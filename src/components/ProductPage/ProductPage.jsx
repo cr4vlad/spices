@@ -9,8 +9,8 @@ export default function ProductPage (props) {
       <h2>{product.title}</h2>
       <img alt={product.title} src={product.logo} />
       <p>Розничная цена: {product.price} грн/кг</p>
-      { product.price100 && (<p>Оптовая цена: от {product.price100} грн/кг</p>)}
-      { product.description && (<p>{product.description}</p>)}
+      {product.price100 && (<p>Оптовая цена: от {product.price100} грн/кг</p>)}
+      {product.description && (<p>{product.description}</p>)}
     </article>
   )
 }

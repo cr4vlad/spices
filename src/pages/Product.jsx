@@ -11,8 +11,8 @@ function Product (props) {
       <>
         <Helmet>
           <title>{`${product.title} | Suneli`}</title>
-          { product.meta_description && (<meta name='description' content={product.meta_description} />)}
-          { product.keywords && (<meta name='keywords' content={product.keywords} />)}
+          {product.meta_description && (<meta name='description' content={product.meta_description} />)}
+          {product.keywords && (<meta name='keywords' content={product.keywords} />)}
         </Helmet>
 
         <ProductPage product={product} />
@@ -36,8 +36,7 @@ const mapStateToProps = (state, ownProps) => {
         return product.id === ownProps.match.params.productId
       })[0]
     }
-  }
-  catch {
+  } catch {
     return {
       product: {}
     }
