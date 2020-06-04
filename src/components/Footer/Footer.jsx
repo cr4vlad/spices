@@ -46,7 +46,7 @@ export default function Footer (props) {
           <hr />
           <>
             <p className='line'>Электронная почта: <a href='mailto:saneleblebi@gmail.com' className='email'>saneleblebi@gmail.com</a></p>
-            <p className='line'>Телефон: +380982206029</p>
+            <p className='line'>Телефоны: +380982206029, +380990804364</p>
           </>
         </div>
       </div>

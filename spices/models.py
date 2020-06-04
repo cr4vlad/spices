@@ -5,6 +5,7 @@ import uuid
 class Category(models.Model):
     id = models.CharField(primary_key=True, max_length=20)
     title = models.CharField(max_length=255)
+    index = models.IntegerField(blank=True, default=0)
     keywords = models.CharField(max_length=1023, blank=True, default='')
     meta_description = models.CharField(max_length=255, blank=True, default='')
 
@@ -19,7 +20,7 @@ class Product(models.Model):
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     title = models.CharField(max_length=255)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
-    description = models.CharField(max_length=4095, blank=True, default='')
+    description = models.TextField(blank=True, default='')
     keywords = models.CharField(max_length=1023, blank=True, default='')
     meta_description = models.CharField(max_length=255, blank=True, default='')
     logo = models.FileField(upload_to='logos', null=True, blank=True)

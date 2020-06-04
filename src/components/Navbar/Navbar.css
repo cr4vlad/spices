@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
+
 header {
   position: fixed;
   width: 100%;
@@ -22,16 +24,20 @@ header .nav--desktop {
   width: 100%;
 }
 
-h1 {
+.title {
   margin: 0;
   display: table-cell;
   vertical-align: middle;
-
-  font-size: 2em;
+  position: relative;
+  top: -3px;
 }
 
-h1 .title {
-  height: 60px;
+.title h1 {
+  margin: 0;
+  font-size: 3.2em;
+  font-family: 'Rancho', cursive;
+  font-weight: 500;
+  text-decoration: none;
 }
 
 header .menu {
@@ -58,7 +64,7 @@ header .link {
   font-size: 0.9em;
 }
 
-@media screen and (max-width: 920px) {
+@media screen and (max-width: 1000px) {
   header {
     height: 70px;
   }
@@ -75,7 +81,9 @@ header .link {
   header .menu {
     width: 25px;
     cursor: pointer;
+    position: relative;
     right: 0;
+    top: -4px;
     background: url("//cdn.shopify.com/s/files/1/1132/3440/t/4/assets/nav.svg?v=13525773726332029513") no-repeat left 0 center;
   }
 

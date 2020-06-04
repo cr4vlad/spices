@@ -12,6 +12,10 @@ export default function LandingPage (props) {
     )
   }
 
+  function compareIndexes (a, b) {
+    return a.index - b.index
+  }
+
   return (
     <>
       <div className='hero-image'>
@@ -23,7 +27,7 @@ export default function LandingPage (props) {
         </div>
       </div>
       <article className='after-hero'>
-        {categories.map(category => (
+        {categories.sort(compareIndexes).map(category => (
           <LandingCategoryContainer key={category.id} id={category.id} />
         ))}
 
@@ -36,7 +40,7 @@ export default function LandingPage (props) {
           Товары содержат только натуральные ингредиенты без добавок, ароматизаторов, красителей и усилителей вкуса, ГМО. Мы тщательно следим за соблюдением всех необходимых правил гигиены и хранения специй. У нас прямые поставки из Грузии и только свежие специи!<br />
           <b>Приятных Вам покупок и вкусовых изысков!</b>
         </p>
-        <Link to='/price'><b>Таблица расценок</b></Link>
+        <Link to='/price'><b>Прайс-лист</b></Link>
       </article>
     </>
   )

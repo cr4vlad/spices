@@ -5,7 +5,7 @@
   left: 0;
   right: 0;
   z-index: 1;
-  background: center / cover no-repeat url(../../assets/specii-iz-gruzii.jpg);
+  background: center / cover no-repeat url(https://storage.googleapis.com/spices-bucket/specii-iz-gruzii.jpg);
   height: 625px;
 }
 
@@ -21,6 +21,8 @@
   font-size: 2.5em;
   line-height: 1.13em;
   letter-spacing: 1px;
+
+  text-shadow: 2px 2px 3px #000;
 }
 
 article.after-hero {

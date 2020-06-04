@@ -23,13 +23,13 @@ export default function Navbar (props) {
     <header role='banner'>
       <div className='wrapper'>
         <div className='nav--desktop'>
-          <h1>
+          <div className='title'>
             <Link to='/'>
-              Suneli
+              <h1>Suneli</h1>
             </Link>
-          </h1>
+          </div>
 
-          <div className='menu' onClick={(props.screenWidth <= 920) ? toggleMobileMenu : undefined}>
+          <div className='menu' onClick={(props.screenWidth <= 1000) ? toggleMobileMenu : undefined}>
             <div className='mobile-menu'>
               {props.categories.map(category => (
                 <div key={category.id} className='category'>
@@ -41,7 +41,7 @@ export default function Navbar (props) {
 
               <div className='category'>
                 <Link to='/price' className='link'>
-                  Цены
+                  Прайс-лист
                 </Link>
               </div>
             </div>
